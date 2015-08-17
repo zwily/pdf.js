@@ -78,6 +78,7 @@ var mozL10n = document.mozL10n || document.webL10n;
 //#include secondary_toolbar.js
 //#include pdf_presentation_mode.js
 //#include hand_tool.js
+//#include annotation_highlight_tool.js
 //#include overlay_manager.js
 //#include password_prompt.js
 //#include pdf_document_properties.js
@@ -177,6 +178,16 @@ var PDFViewerApplication = {
     HandTool.initialize({
       container: container,
       toggleHandTool: document.getElementById('toggleHandTool')
+    });
+
+    AnnotationHighlightTool.initialize({
+      container: container,
+      toggleAnnotationHighlight: document.getElementById('toggleAnnotationHighlight')
+    });
+
+    AnnotationAreaTool.initialize({
+      container: container,
+      toggle: document.getElementById('toggleAnnotationArea')
     });
 
     this.pdfDocumentProperties = new PDFDocumentProperties({

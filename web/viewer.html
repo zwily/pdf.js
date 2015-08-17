@@ -36,6 +36,7 @@ See https://github.com/adobe-type-tools/cmap-resources
 <!--#include viewer-snippet-chrome-extension.html-->
 <!--#endif-->
 
+    <link rel="stylesheet" href="custom_annotations.css" />
     <link rel="stylesheet" href="viewer.css"/>
 <!--#if !PRODUCTION-->
     <link rel="resource" type="application/l10n" href="locale/locale.properties"/>
@@ -88,9 +89,11 @@ See https://github.com/adobe-type-tools/cmap-resources
     <script src="pdf_presentation_mode.js"></script>
     <script src="grab_to_pan.js"></script>
     <script src="hand_tool.js"></script>
+    <script src="annotation_highlight_tool.js"></script>
     <script src="overlay_manager.js"></script>
     <script src="password_prompt.js"></script>
     <script src="pdf_document_properties.js"></script>
+    <script src="custom_annotations.js"></script>
 <!--#endif-->
 
 <!--#if !MINIFIED -->
@@ -193,6 +196,16 @@ See https://github.com/adobe-type-tools/cmap-resources
 
             <button id="toggleHandTool" class="secondaryToolbarButton handTool" title="Enable hand tool" tabindex="60" data-l10n-id="hand_tool_enable">
               <span data-l10n-id="hand_tool_enable_label">Enable hand tool</span>
+            </button>
+
+            <div class="horizontalToolbarSeparator"></div>
+
+            <button id="toggleAnnotationHighlight" class="secondaryToolbarButton" title="Highlight" tabindex="" data-l10n-id="annotation_highlight">
+              <span data-l10n-id="annotation_highlight_label">Highlight</span>
+            </button>
+
+            <button id="toggleAnnotationArea" class="secondaryToolbarButton" title="Area" tabindex="" data-l10n-id="annotation_area">
+              <span data-l10n-id="annotation_area_label">Area</span>
             </button>
 
             <div class="horizontalToolbarSeparator"></div>
@@ -305,6 +318,10 @@ See https://github.com/adobe-type-tools/cmap-resources
         </menu>
 
         <div id="viewerContainer" tabindex="0">
+          <!--
+          <div id="commentsViewer" style="position: fixed; display: block; right: 0; width: 200px; height: 100%; border: 2px solid green;">
+          </div>
+          -->
           <div id="viewer" class="pdfViewer"></div>
         </div>
 

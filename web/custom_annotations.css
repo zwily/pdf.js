@@ -1,0 +1,13 @@
+.customAnnotationsLayer {
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: inline-block;
+  overflow: auto;
+  background: transparent;
+  pointer-events: none;
+}
+
+.customAnnotationsEditable .customAnnotationsLayer {
+  pointer-events: all;
+}
